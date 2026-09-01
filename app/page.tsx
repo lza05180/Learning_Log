@@ -170,9 +170,9 @@ export default function Home() {
           </h1>
         </div>
         <p className="intro-copy">
-          수업한 날과 진도, 과제 수행도를 빠짐없이 기록했습니다.
+          수업을 진행한 날짜는 노란색으로 표시됩니다.
           <br />
-          형광 노란색 날짜를 누르면 그날의 수업 내용을 볼 수 있어요.
+          노란색으로 표시된 날짜를 누르면 그날의 수업 기록을 확인할 수 있습니다.
         </p>
       </section>
 
@@ -297,8 +297,8 @@ export default function Home() {
             <div className="empty-detail">
               <span className="empty-symbol" aria-hidden="true">✦</span>
               <p className="detail-kicker">NO LESSON YET</p>
-              <h2>이달에는 등록된 수업이 없어요.</h2>
-              <p>형광 노란색으로 표시된 달에는 날짜를 눌러 상세 기록을 확인할 수 있습니다.</p>
+              <h2>아직 진행한 수업이 없습니다.</h2>
+              <p>노란색으로 표시된 날짜를 눌러 상세 기록을 확인할 수 있습니다.</p>
             </div>
           )}
         </aside>
