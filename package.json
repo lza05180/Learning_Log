@@ -12,7 +12,6 @@
     "lint": "eslint .",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
-    "data:migrate": "node scripts/migrate-existing-data.mjs",
     "secret:generate": "node scripts/generate-session-secret.mjs"
   },
   "dependencies": {

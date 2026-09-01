@@ -42,8 +42,7 @@ chaeyoon-study-log-vercel/
 ├─ lib/                            # 인증과 입력값 검사
 ├─ public/og.png                   # 링크 공유 이미지
 ├─ scripts/
-│  ├─ generate-session-secret.mjs
-│  └─ migrate-existing-data.mjs
+│  └─ generate-session-secret.mjs
 ├─ .env.example
 ├─ package.json
 └─ README.md
@@ -133,21 +132,10 @@ npx.cmd vercel --prod
 | `DATABASE_URL` | 로컬, Vercel | Neon PostgreSQL 연결 주소 |
 | `TEACHER_PASSWORD` | 로컬, Vercel | `/manage` 로그인 비밀번호 |
 | `TEACHER_SESSION_SECRET` | 로컬, Vercel | 12시간짜리 로그인 쿠키의 위조 방지 서명 |
-| `LEGACY_SITE_URL` | 데이터 이전을 실행할 내 컴퓨터 | 기존 ChatGPT Sites 주소 |
 
 실제 비밀번호가 든 `.env.local`은 다른 사람에게 보내거나 GitHub에 올리지 마세요. `200612`처럼 짧은 숫자 비밀번호는 추측하기 쉬우므로 실제 공개 운영에서는 더 긴 비밀번호를 권장합니다.
 
-## 4. 기존 기록 옮기기
-
-자세한 설명은 [DATA_MIGRATION.md](DATA_MIGRATION.md)를 참고하세요. 요약하면 새 Neon 데이터베이스가 연결된 `.env.local`을 준비한 뒤 아래 한 줄을 실행합니다.
-
-```powershell
-npm.cmd run data:migrate
-```
-
-이 명령은 기존 사이트의 `/api/lessons` 기록을 내려받아 `data/`에 JSON 백업을 만든 후, 같은 날짜를 기준으로 새 데이터베이스에 추가하거나 갱신합니다. 같은 명령을 다시 실행해도 같은 날짜의 기록이 중복 생성되지 않습니다.
-
-## 5. 자주 사용하는 명령
+## 4. 자주 사용하는 명령
 
 | 명령 | 의미 |
 |---|---|
@@ -157,11 +145,10 @@ npm.cmd run data:migrate
 | `npm.cmd run start` | 빌드된 결과를 내 컴퓨터에서 실행 |
 | `npm.cmd run lint` | 코드 문법과 규칙 검사 |
 | `npm.cmd run secret:generate` | 안전한 세션 비밀키 생성 |
-| `npm.cmd run data:migrate` | 기존 ChatGPT Sites 기록 이전 |
 | `npm.cmd run db:generate` | 데이터베이스 구조 변경 SQL 생성 |
 | `npm.cmd run db:migrate` | 생성한 구조 변경을 데이터베이스에 적용 |
 
-## 6. 사이트 수정 위치
+## 5. 사이트 수정 위치
 
 - 제목, 달력, 상세 보기: `app/page.tsx`
 - 색상, 크기, 배치: `app/globals.css`
